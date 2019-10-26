@@ -79,12 +79,14 @@ void display_board(const char board[9][9]) {
 bool is_complete(const char board[9][9]) {
   // Declare local variable 'success'
   bool success = true;
+  int rowcount = 0;
+  int colcount = 0;
   //For loop to iterate across rows
-  for (int row = 0; row < 9; row++) {
+  for (; rowcount < 9; rowcount++) {
     //For loop to iterate across columns for each row
-    for (int col = 0; col < 9; col++) {
+    for (; colcount < 9; colcount++) {
       //Determine if success is still true
-      success = isdigit(board[row][col]) && success;
+      success = isdigit(board[rowcount][colcount]) && board[rowcount][colcount]>0 && success;
       //If false, return false immediately
       if (success !=true) {
 	return false;
