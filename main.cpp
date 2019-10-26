@@ -31,9 +31,9 @@ int main() {
   if (!is_complete(board))
     cout << "NOT ";
   cout << "complete." << "\n\n";
-
+  
   cout << "=================== Question 2 ===================" << "\n\n";
-
+  
   load_board("easy.dat", board);
 
   // Should be OK
@@ -42,9 +42,30 @@ int main() {
     cout << "NOT ";
   cout << "a valid move. The board is:" << '\n';
   display_board(board);
+  
+  // Should not be OK
+  cout << "Putting '1' into C8 is ";
+  if (!make_move("C8", '1', board)) 
+    cout << "NOT ";
+  cout << "a valid move. The board is:" << '\n';
+  display_board(board);
+  
+  // Should not be OK
+  cout << "Putting '1' into I20 is ";
+  if (!make_move("I20", '1', board)) 
+    cout << "NOT ";
+  cout << "a valid move. The board is:" << '\n';
+  display_board(board);
 
+  // Should not be OK
+  cout << "Putting 'a' into C4 is ";
+  if (!make_move("I8", 'a', board)) 
+    cout << "NOT ";
+  cout << "a valid move. The board is:" << '\n';
+  display_board(board);
+  
 	// write more tests
-
+  
   cout << "=================== Question 3 ===================" << "\n\n";
 
   load_board("easy.dat", board);
@@ -75,7 +96,46 @@ int main() {
 	// write more tests
 
   cout << "=================== Question 5 ===================" << "\n\n";
+  load_board("mystery1.dat", board);
+  if (solve_board(board)) {
+    cout << "The 'mystery1' board has a solution:" << '\n';
+    display_board(board);
+    } else 
+    cout << "A solution cannot be found." << '\n';
+  cout << '\n';
 
+  load_board("mystery2.dat", board);
+  if (solve_board(board)) {
+    cout << "The 'mystery2' board has a solution:" << '\n';
+    display_board(board);
+  } else 
+    cout << "A solution cannot be found." << '\n';
+  cout << '\n';
+
+  load_board("mystery3.dat", board);
+  if (solve_board(board,0,0)) {
+    cout << "The 'mystery3' board has a solution:" << '\n';
+    display_board(board);
+  } else 
+    cout << "A solution cannot be found." << '\n';
+  cout << '\n';
+  /*
+  load_board("hardest.dat", board);
+  if (solve_board(board,0,0)) {
+    cout << "The 'hardest' board has a solution:" << '\n';
+    display_board(board);
+  } else 
+    cout << "A solution cannot be found." << '\n';
+  cout << '\n';
+
+  load_board("escargot.dat", board);
+  if (solve_board(board,0,0)) {
+    cout << "The 'escargot' board has a solution:" << '\n';
+    display_board(board);
+  } else 
+    cout << "A solution cannot be found." << '\n';
+  cout << '\n';
+  */
 	// write more tests
 
   return 0;

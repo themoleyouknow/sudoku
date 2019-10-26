@@ -4,8 +4,8 @@
 #include <cstring>
 #include <cassert>
 #include <cmath>
-#include "sudoku.h"
 #include <iomanip>
+#include "sudoku.h"
 using namespace std;
 
 /* You are pre-supplied with the functions below. Add your own 
