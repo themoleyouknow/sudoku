@@ -1,1 +1,4 @@
 Summarise your findings here (see specification).
+Mystery 1 was the "extremely hard" difficulty puzzle.
+Mystery 2 was the impossible puzzle.
+Mystery 3 was the "hard" difficulty puzzle.
