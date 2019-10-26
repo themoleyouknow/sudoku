@@ -77,24 +77,16 @@ void display_board(const char board[9][9]) {
 // Purpose: Returns boolean true if a the inputted sudoku board contains digits in all entries;
 // returns false otherwise. 
 bool is_complete(const char board[9][9]) {
-  // Declare local variable 'success'
-  bool success = true;
-  int rowcount = 0;
-  int colcount = 0;
-  //For loop to iterate across rows
-  for (; rowcount < 9; rowcount++) {
-    //For loop to iterate across columns for each row
-    for (; colcount < 9; colcount++) {
-      //Determine if success is still true
-      success = isdigit(board[rowcount][colcount]) && board[rowcount][colcount]>0 && success;
-      //If false, return false immediately
-      if (success !=true) {
-	return false;
-      }
+  // For loop to iterate across rows
+  for (int rowcount = 0; rowcount < 9; rowcount++) {
+    // For loop to iterate across columns for each row
+    for (int colcount = 0; colcount < 9; colcount++) {
+      // Return false if not a digit, or equal to 0 (must be between 1 and 9 inclusive)
+      if (!isdigit(board[rowcount][colcount]) || board[rowcount][colcount] == 48) return false;
     }
   }
   //Return success if reached end
-  return success;
+  return true;
 }
 
 /* Define make_move */
