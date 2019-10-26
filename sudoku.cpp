@@ -163,7 +163,7 @@ bool solve_board( char board[9][9], int row, int col) {
   int num = 1;
   // Check if we've reached the end! 
   if (row>8) {
-    cout <<  "Solution found, and number of recursions = " << recursions << endl;;
+    // cout <<  "Solution found, and number of recursions = " << recursions << endl;;
     recursions = 0;
     return true;
   }
@@ -190,7 +190,7 @@ bool solve_board( char board[9][9], int row, int col) {
   }
   // No solution found! Return false
   if (row==0&&col==0) {
-    cout << "No solution found, and number of recursions = " << recursions << endl;
+    //cout << "No solution found, and number of recursions = " << recursions << endl;
     recursions = 0;
 
   }
