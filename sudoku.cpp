@@ -152,12 +152,11 @@ int recursions = 0;
 // NB the row and column are initialised to 0 in the header file so that only a board needs to be
 // used a parameter by the user.
 bool solve_board( char board[9][9], int row, int col) {
+  // Increase numer of recursions by 1
   recursions++;
-  // Declare and initialise trial number
-  int num = 1;
   // Check if we've reached the end! 
   if (row>8) {
-    // cout <<  "Solution found, and number of recursions = " << recursions << endl;;
+    cout <<  "Solution found, and number of recursions = " << recursions << endl;;
     recursions = 0;
     return true;
   }
@@ -169,7 +168,7 @@ bool solve_board( char board[9][9], int row, int col) {
   // If loop to check if the space is blank
   if (!isdigit(board[row][col])) {
     // For loop to run through possible nums for this cell and test implications
-    for ( ; num <=9; num++) {
+    for (int num = 1; num <= 9; num++) {
     // Check if the move is valid
       if (is_valid(board, row, col, num) && make_move(move_str, char (num+48), board) ) {
 	// Check next valid space
@@ -184,7 +183,7 @@ bool solve_board( char board[9][9], int row, int col) {
   }
   // No solution found! Return false
   if (row==0&&col==0) {
-    //cout << "No solution found, and number of recursions = " << recursions << endl;
+    cout << "No solution found, and number of recursions = " << recursions << endl;
     recursions = 0;
 
   }
